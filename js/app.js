@@ -814,8 +814,9 @@
   }
 
   // ------------------------------------------------------------ start
+  window.addEventListener("hashchange", go);
+  
   boot().then(go).catch((e) => {
-    $("app").innerHTML = '<div class="wrap" style="padding-block:60px"><div class="notice bad">სისტემის ჩატვირთვა ვერ მოხერხდა: ' + esc(e.message) + "</div></div>";
-    console.error(e);
+      $("app").innerHTML = '<div class="wrap" style="padding-block:60px"><div class="notice bad">სისტემის ჩატვირთვა ვერ მოხერხდა: ' + esc(e.message) + "</div></div>";
+      console.error(e);
   });
-})();
